@@ -3202,3 +3202,92 @@ body.tema-escuro .aviso-sistema {
     max-width: 190px;
   }
 }
+
+/* =========================================================
+   MOBILE - BOTÕES MENU E VOLTAR
+========================================================= */
+
+.botao-voltar-conversa-mobile {
+  display: none;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 12px;
+  background: #2a3942;
+  color: #e9edef;
+  border: 1px solid #2a3942;
+  font-size: 24px;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .botao-voltar-conversa-mobile {
+    display: inline-flex;
+  }
+
+  .botao-menu-mobile {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botao-fechar-menu-mobile {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: min(92vw, 390px) !important;
+    max-width: 390px !important;
+    height: 100vh !important;
+    z-index: 5000 !important;
+    transition: left 0.25s ease !important;
+    overflow-y: auto !important;
+  }
+
+  .sidebar.sidebar-mobile-aberta {
+    left: 0 !important;
+  }
+
+  body.menu-mobile-aberto::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 4000;
+  }
+
+  body.menu-mobile-aberto .sidebar {
+    z-index: 5001 !important;
+  }
+
+  .chat-topo {
+    position: relative;
+    z-index: 100;
+  }
+
+  .info-conversa {
+    min-width: 0;
+  }
+
+  .info-conversa h2,
+  .status-conversa,
+  .bio-conversa,
+  .aviso-digitando {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 901px) {
+  .botao-voltar-conversa-mobile {
+    display: none !important;
+  }
+}
