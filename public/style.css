@@ -2894,3 +2894,311 @@ body.tema-escuro .aviso-sistema {
   background: rgba(42, 57, 66, 0.85) !important;
   color: #aebac1 !important;
 }
+
+/* =========================================================
+   RESPONSIVIDADE MOBILE - REDE COQUEIRO
+   Upgrade celular
+========================================================= */
+
+@media (max-width: 900px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .app {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: min(88vw, 380px);
+    max-width: 380px;
+    height: 100vh;
+    z-index: 3000;
+    transition: left 0.25s ease;
+    border-right: 1px solid #2a3942;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .sidebar.sidebar-mobile-aberta {
+    left: 0;
+  }
+
+  .botao-fechar-menu-mobile {
+    display: block;
+  }
+
+  .botao-menu-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .chat-topo {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .avatar-conversa {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .info-conversa h2 {
+    font-size: 16px;
+  }
+
+  .status-conversa,
+  .bio-conversa,
+  .aviso-digitando {
+    font-size: 11px;
+  }
+
+  .acoes-topo-chat button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .area-busca-conversa {
+    top: 62px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+
+  .mensagens {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .mensagem {
+    max-width: 88%;
+    font-size: 14px;
+  }
+
+  .imagem-mensagem {
+    max-width: 220px;
+  }
+
+  .audio-mensagem-box audio {
+    max-width: 210px;
+  }
+
+  .area-envio {
+    padding: 8px;
+    gap: 7px;
+  }
+
+  .formulario-envio {
+    grid-template-columns: 40px 40px 1fr 40px 40px;
+    gap: 6px;
+    align-items: end;
+  }
+
+  .formulario-envio button,
+  .botao-emoji,
+  .botao-anexar,
+  .botao-audio,
+  .botao-enviar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 13px;
+    font-size: 17px;
+  }
+
+  .campo-mensagem {
+    min-height: 40px;
+    max-height: 100px;
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .painel-emojis {
+    left: 8px;
+    right: 8px;
+    bottom: 66px;
+    width: auto;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .painel-emojis button {
+    width: 100%;
+  }
+
+  .cartao {
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .cartao h2 {
+    font-size: 18px;
+  }
+
+  .cartao h3 {
+    font-size: 16px;
+  }
+
+  .area-login input,
+  .campo-padrao,
+  .campo-status,
+  .campo-bio,
+  .campo-busca-contato,
+  .campo-novo-contato,
+  .campo-apelido-contato,
+  .campo-apelido-pedido,
+  .campo-apelido-perfil,
+  .campo-novo-nome-grupo,
+  .campo-busca-conversa,
+  .nome-grupo-input {
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .modal-perfil,
+  .modal-encaminhar,
+  .modal-grupo-config,
+  .modal-imagem,
+  .modal-ocioso {
+    padding: 8px;
+  }
+
+  .modal-perfil-conteudo,
+  .modal-encaminhar-conteudo,
+  .modal-grupo-config-conteudo,
+  .modal-ocioso-conteudo {
+    width: 96vw;
+    max-height: 92vh;
+    border-radius: 18px;
+  }
+
+  .modal-ocioso-conteudo {
+    height: 94vh;
+  }
+
+  .abas-ocioso {
+    grid-template-columns: 1fr;
+  }
+
+  .domino-painel-info,
+  .domino-centro-mesa,
+  .domino-area-minha-mao,
+  .info-jogadores-xadrez {
+    grid-template-columns: 1fr;
+  }
+
+  .domino-campo-mesa {
+    min-height: 180px;
+  }
+
+  .domino-minhas-pecas {
+    justify-content: flex-start;
+  }
+
+  .pedra-domino {
+    width: 48px;
+    height: 88px;
+    min-width: 48px;
+    max-width: 48px;
+  }
+
+  .pedra-domino-na-mesa {
+    width: 88px;
+    height: 48px;
+    min-width: 88px;
+    max-width: 88px;
+  }
+
+  .pedra-domino-dupla-na-mesa {
+    width: 48px;
+    height: 88px;
+    min-width: 48px;
+    max-width: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 92vw;
+    max-width: 92vw;
+  }
+
+  .chat-topo {
+    padding: 8px;
+  }
+
+  .logo-texto h1 {
+    font-size: 18px;
+  }
+
+  .logo-texto span {
+    font-size: 12px;
+  }
+
+  .botao-tema,
+  .botao-fechar-menu-mobile {
+    width: 36px;
+    height: 36px;
+  }
+
+  .avatar-conversa {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .info-conversa h2 {
+    font-size: 15px;
+  }
+
+  .mensagens {
+    padding: 10px;
+  }
+
+  .mensagem {
+    max-width: 92%;
+    font-size: 14px;
+  }
+
+  .formulario-envio {
+    grid-template-columns: 38px 38px 1fr 38px 38px;
+    gap: 5px;
+  }
+
+  .formulario-envio button,
+  .botao-emoji,
+  .botao-anexar,
+  .botao-audio,
+  .botao-enviar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 16px;
+  }
+
+  .campo-mensagem {
+    font-size: 16px;
+    border-radius: 14px;
+  }
+
+  .imagem-mensagem {
+    max-width: 190px;
+  }
+}
