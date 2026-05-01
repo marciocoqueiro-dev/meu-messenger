@@ -2620,3 +2620,277 @@ body[data-meu-tema-domino="corinthians"] .domino-minhas-pecas .pedra-domino-na-m
     height: 24px !important;
   }
 }
+/* =========================================================
+   TEMA CLARO / ESCURO - REDE COQUEIRO
+   Correção completa
+========================================================= */
+
+/* MODO CLARO */
+html.tema-claro,
+body.tema-claro {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+body.tema-claro .app {
+  background: #f3f4f6 !important;
+}
+
+body.tema-claro .sidebar {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-right: 1px solid #cbd5e1 !important;
+}
+
+body.tema-claro .chat {
+  background: #eef2f7 !important;
+}
+
+body.tema-claro .chat-topo,
+body.tema-claro .area-envio,
+body.tema-claro .cartao,
+body.tema-claro .modal-conteudo,
+body.tema-claro .modal-perfil-conteudo,
+body.tema-claro .modal-encaminhar-conteudo,
+body.tema-claro .modal-grupo-config-conteudo,
+body.tema-claro .modal-ocioso-conteudo {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.tema-claro h1,
+body.tema-claro h2,
+body.tema-claro h3,
+body.tema-claro strong,
+body.tema-claro p,
+body.tema-claro label,
+body.tema-claro span,
+body.tema-claro small,
+body.tema-claro .logo-texto h1,
+body.tema-claro .cartao h2,
+body.tema-claro .cartao h3,
+body.tema-claro .info-conversa h2,
+body.tema-claro .usuario-topo strong,
+body.tema-claro .grupo-topo strong {
+  color: #111827 !important;
+}
+
+body.tema-claro .status-conversa,
+body.tema-claro .bio-conversa,
+body.tema-claro .aviso-digitando,
+body.tema-claro .nick-contato,
+body.tema-claro .usuario-status,
+body.tema-claro .previa-mensagem,
+body.tema-claro .grupo-membros,
+body.tema-claro .horario-ultima-mensagem {
+  color: #64748b !important;
+}
+
+body.tema-claro input,
+body.tema-claro textarea,
+body.tema-claro select {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+body.tema-claro input::placeholder,
+body.tema-claro textarea::placeholder {
+  color: #64748b !important;
+}
+
+body.tema-claro button {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+body.tema-claro button:hover {
+  background: #e5e7eb !important;
+}
+
+body.tema-claro .botao-principal,
+body.tema-claro .area-login button,
+body.tema-claro .botao-enviar {
+  background: #25d366 !important;
+  color: #061f17 !important;
+  border-color: #25d366 !important;
+}
+
+body.tema-claro .botao-perigo {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+}
+
+body.tema-claro .botao-tema {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border-color: #111827 !important;
+}
+
+body.tema-claro .mensagens {
+  background: #eef2f7 !important;
+}
+
+body.tema-claro .mensagem,
+body.tema-claro .outra-mensagem,
+body.tema-claro .usuario-item,
+body.tema-claro .grupo-item,
+body.tema-claro .pedido-contato-item,
+body.tema-claro .item-contato-xadrez,
+body.tema-claro .item-convite-xadrez,
+body.tema-claro .item-partida-xadrez {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.tema-claro .minha-mensagem {
+  background: #dcfce7 !important;
+  color: #064e3b !important;
+}
+
+body.tema-claro .aviso-sistema {
+  background: #ffffff !important;
+  color: #64748b !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* MODO ESCURO */
+html.tema-escuro,
+body.tema-escuro {
+  background: #111b21 !important;
+  color: #e9edef !important;
+}
+
+body.tema-escuro .app {
+  background: #0b141a !important;
+}
+
+body.tema-escuro .sidebar {
+  background: #111b21 !important;
+  color: #e9edef !important;
+  border-right: 1px solid #2a3942 !important;
+}
+
+body.tema-escuro .chat {
+  background:
+    linear-gradient(rgba(17, 27, 33, 0.92), rgba(17, 27, 33, 0.92)),
+    radial-gradient(circle at 20% 20%, rgba(37, 211, 102, 0.11), transparent 30%) !important;
+}
+
+body.tema-escuro .chat-topo,
+body.tema-escuro .area-envio,
+body.tema-escuro .cartao,
+body.tema-escuro .modal-conteudo,
+body.tema-escuro .modal-perfil-conteudo,
+body.tema-escuro .modal-encaminhar-conteudo,
+body.tema-escuro .modal-grupo-config-conteudo,
+body.tema-escuro .modal-ocioso-conteudo {
+  background: #202c33 !important;
+  color: #e9edef !important;
+  border-color: #2a3942 !important;
+}
+
+body.tema-escuro .cartao {
+  background: #111f27 !important;
+}
+
+body.tema-escuro h1,
+body.tema-escuro h2,
+body.tema-escuro h3,
+body.tema-escuro strong,
+body.tema-escuro .logo-texto h1,
+body.tema-escuro .cartao h2,
+body.tema-escuro .cartao h3,
+body.tema-escuro .info-conversa h2,
+body.tema-escuro .usuario-topo strong,
+body.tema-escuro .grupo-topo strong {
+  color: #ffffff !important;
+}
+
+body.tema-escuro p,
+body.tema-escuro label,
+body.tema-escuro span,
+body.tema-escuro small {
+  color: #d7e1e7 !important;
+}
+
+body.tema-escuro .status-conversa,
+body.tema-escuro .bio-conversa,
+body.tema-escuro .aviso-digitando,
+body.tema-escuro .nick-contato,
+body.tema-escuro .usuario-status,
+body.tema-escuro .previa-mensagem,
+body.tema-escuro .grupo-membros,
+body.tema-escuro .horario-ultima-mensagem {
+  color: #aebac1 !important;
+}
+
+body.tema-escuro input,
+body.tema-escuro textarea,
+body.tema-escuro select {
+  background: #263842 !important;
+  color: #ffffff !important;
+  border: 1px solid #263842 !important;
+}
+
+body.tema-escuro input::placeholder,
+body.tema-escuro textarea::placeholder {
+  color: #aebac1 !important;
+}
+
+body.tema-escuro button {
+  background: #2a3942 !important;
+  color: #e9edef !important;
+  border: 1px solid #2a3942 !important;
+}
+
+body.tema-escuro button:hover {
+  background: #33444f !important;
+}
+
+body.tema-escuro .botao-principal,
+body.tema-escuro .area-login button,
+body.tema-escuro .botao-enviar {
+  background: #25d366 !important;
+  color: #061f17 !important;
+  border-color: #25d366 !important;
+}
+
+body.tema-escuro .botao-perigo {
+  background: #ff5c50 !important;
+  color: #ffffff !important;
+  border-color: #ff5c50 !important;
+}
+
+body.tema-escuro .botao-tema {
+  background: #f8fafc !important;
+  color: #111827 !important;
+  border-color: #f8fafc !important;
+}
+
+body.tema-escuro .mensagem,
+body.tema-escuro .outra-mensagem,
+body.tema-escuro .usuario-item,
+body.tema-escuro .grupo-item,
+body.tema-escuro .pedido-contato-item,
+body.tema-escuro .item-contato-xadrez,
+body.tema-escuro .item-convite-xadrez,
+body.tema-escuro .item-partida-xadrez {
+  background: #202c33 !important;
+  color: #e9edef !important;
+  border-color: #263842 !important;
+}
+
+body.tema-escuro .minha-mensagem {
+  background: #005c4b !important;
+  color: #e9edef !important;
+}
+
+body.tema-escuro .aviso-sistema {
+  background: rgba(42, 57, 66, 0.85) !important;
+  color: #aebac1 !important;
+}
