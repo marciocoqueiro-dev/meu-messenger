@@ -3291,3 +3291,49 @@ body.tema-escuro .aviso-sistema {
     display: none !important;
   }
 }
+
+/* =========================================================
+   BOTÃO SAIR DA CONVERSA - PC E CELULAR
+========================================================= */
+
+.botao-sair-conversa {
+  width: auto !important;
+  min-width: 64px !important;
+  height: 38px !important;
+  border-radius: 12px !important;
+  padding: 0 12px !important;
+  background: #ff5c50 !important;
+  color: #ffffff !important;
+  border: 1px solid #ff5c50 !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+}
+
+.botao-sair-conversa:hover {
+  background: #e74c3c !important;
+}
+
+body.tema-claro .botao-sair-conversa {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+}
+
+body.tema-escuro .botao-sair-conversa {
+  background: #ff5c50 !important;
+  color: #ffffff !important;
+  border-color: #ff5c50 !important;
+}
+
+@media (max-width: 900px) {
+  .botao-sair-conversa {
+    min-width: 50px !important;
+    height: 36px !important;
+    padding: 0 8px !important;
+    font-size: 12px !important;
+  }
+
+  .acoes-topo-chat {
+    gap: 5px !important;
+  }
+}
