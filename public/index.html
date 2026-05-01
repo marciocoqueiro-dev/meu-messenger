@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rede Coqueiro</title>
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="barra-topo-sidebar">
+        <div class="logo-area">
+          <div class="logo-bolha">🌴</div>
+          <div class="logo-texto">
+            <h1>Rede Coqueiro</h1>
+            <span>Messenger</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:6px;">
+          <button id="botaoTema" class="botao-tema" type="button">🌙</button>
+          <button id="botaoFecharMenuMobile" class="botao-fechar-menu-mobile" type="button">×</button>
+        </div>
+      </div>
+
+      <section class="cartao">
+        <div class="conta-topo">
+          <div id="minhaFotoPerfilPreview" class="avatar-minha-conta">?</div>
+
+          <div>
+            <h2>Bem-vindo à Rede Coqueiro</h2>
+            <p>Entre, envie solicitação de contato pelo nick e converse apenas depois que a pessoa aceitar.</p>
+          </div>
+        </div>
+
+        <input id="campoFotoPerfil" type="file" accept="image/*" hidden />
+
+        <div class="area-foto-perfil">
+          <button id="botaoEscolherFotoPerfil" type="button" class="botao-secundario" disabled>Alterar foto</button>
+          <button id="botaoRemoverFotoPerfil" type="button" class="botao-secundario" disabled>Remover</button>
+        </div>
+
+        <div class="area-login">
+          <input id="nomeUsuario" type="text" placeholder="Seu nick / nome de usuário..." autocomplete="username" />
+
+          <div class="senha-linha">
+            <input id="senhaUsuario" type="password" placeholder="Senha..." autocomplete="current-password" />
+            <button id="botaoMostrarSenha" type="button">👁</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+            <button id="botaoCadastrar" type="button">Cadastrar</button>
+            <button id="botaoEntrar" type="button">Entrar</button>
+          </div>
+        </div>
+
+        <div id="mensagemConta" class="mensagem-conta"></div>
+      </section>
+
+      <section class="cartao">
+        <h3>Usuário</h3>
+        <p>
+          Conectado na Rede Coqueiro:
+          <strong id="nomeUsuarioLogado">---</strong>
+        </p>
+
+        <div class="status-area">
+          <label for="campoStatus">Meu status</label>
+          <select id="campoStatus" class="campo-status" disabled>
+            <option>Disponível</option>
+            <option>Ocupado</option>
+            <option>Ausente</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="cartao">
+        <h3>Meu recado</h3>
+
+        <div class="bio-area">
+          <label for="campoBio">Mostre uma frase no seu perfil</label>
+          <input id="campoBio" class="campo-bio" type="text" placeholder="Na Rede Coqueiro" disabled />
+          <button id="botaoSalvarBio" class="botao-principal" type="button" disabled>Salvar recado</button>
+        </div>
+      </section>
+
+      <section class="cartao">
+        <h3>Minha conta</h3>
+        <p>Gerencie sua sessão</p>
+        <button id="botaoSair" type="button" class="botao-perigo" disabled>Sair</button>
+      </section>
+
+      <section class="cartao">
+        <h3>Ocioso</h3>
+        <p>Jogue dominó com um contato aceito</p>
+        <button id="botaoAbrirOcioso" type="button" class="botao-principal" disabled>🁫 Abrir</button>
+      </section>
+
+      <section class="cartao">
+        <h3>Solicitar contato</h3>
+
+        <div class="solicitar-contato-area">
+          <div class="solicitar-contato-linha">
+            <input id="campoNovoContato" class="campo-novo-contato" type="text" placeholder="Nick real da pessoa. Ex: Joao123" disabled />
+            <input id="campoApelidoContato" class="campo-apelido-contato" type="text" placeholder="Salvar como. Ex: João da escola" disabled />
+            <button id="botaoAdicionarContato" type="button" class="botao-principal" disabled>Enviar solicitação</button>
+          </div>
+
+          <p>A pessoa precisa aceitar sua solicitação antes da conversa ser liberada.</p>
+        </div>
+      </section>
+
+      <section class="cartao">
+        <h3>
+          Pedidos recebidos
+          <span id="contadorPedidosContato"></span>
+        </h3>
+
+        <div id="listaPedidosContato" class="lista-pedidos">
+          Nenhum pedido pendente
+        </div>
+      </section>
+
+      <section class="cartao">
+        <h3>Meus contatos</h3>
+
+        <input id="campoBuscaContato" class="campo-busca-contato" type="text" placeholder="Buscar nos meus contatos..." />
+
+        <div id="listaUsuarios" class="lista-usuarios">
+          Nenhum contato aceito ainda
+        </div>
+      </section>
+
+      <section class="cartao">
+        <h3>Grupos</h3>
+
+        <div style="display:grid; gap:8px;">
+          <input id="nomeGrupo" class="nome-grupo-input" type="text" placeholder="Nome do grupo..." />
+
+          <div id="listaParticipantesGrupo" class="lista-participantes-grupo">
+            Entre no chat para escolher contatos aceitos.
+          </div>
+
+          <button id="botaoCriarGrupo" type="button" class="botao-principal">Criar grupo</button>
+        </div>
+
+        <div id="listaGrupos" class="lista-grupos" style="margin-top:10px;">
+          Nenhum grupo ainda
+        </div>
+      </section>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-topo">
+        <button id="botaoAbrirMenuMobile" class="botao-menu-mobile" type="button">☰</button>
+
+        <div id="avatarConversa" class="avatar-conversa">🌴</div>
+
+        <div class="info-conversa">
+          <h2 id="tituloConversa">Rede Coqueiro</h2>
+          <div id="statusConversa" class="status-conversa">Selecione uma conversa</div>
+          <div id="bioConversa" class="bio-conversa"></div>
+          <div id="avisoDigitando" class="aviso-digitando"></div>
+        </div>
+
+        <div class="acoes-topo-chat">
+          <button id="botaoAbrirBuscaConversa" type="button">🔎</button>
+        </div>
+
+        <div id="areaBuscaConversa" class="area-busca-conversa">
+          <input id="campoBuscaConversa" class="campo-busca-conversa" type="text" placeholder="Buscar nesta conversa..." />
+          <div id="resultadoBuscaConversa">Digite para pesquisar</div>
+          <button id="botaoLimparBuscaConversa" type="button" class="botao-secundario">Limpar</button>
+        </div>
+      </header>
+
+      <section id="mensagens" class="mensagens">
+        <div class="aviso-sistema">
+          Entre na sua conta e selecione um contato para conversar.
+        </div>
+      </section>
+
+      <footer class="area-envio">
+        <div id="areaRespostaMensagem" class="area-resposta-mensagem">
+          <div style="flex:1;">
+            <strong id="respostaNome">Respondendo</strong>
+            <div id="respostaTexto"></div>
+          </div>
+          <button id="botaoCancelarResposta" type="button" class="botao-secundario">×</button>
+        </div>
+
+        <div id="areaPreviewImagem" class="area-preview-imagem">
+          <img id="imagemPreviewSelecionada" alt="Preview da imagem" />
+          <div style="flex:1;">
+            <strong id="nomeImagemSelecionada"></strong>
+            <div id="tamanhoImagemSelecionada"></div>
+          </div>
+          <button id="botaoCancelarImagem" type="button" class="botao-secundario">×</button>
+        </div>
+
+        <div id="areaPreviewAudio" class="area-preview-audio">
+          <audio id="audioPreviewSelecionado" controls></audio>
+          <span id="duracaoAudioSelecionado">Áudio pronto</span>
+          <button id="botaoCancelarAudio" type="button" class="botao-secundario">×</button>
+        </div>
+
+        <div id="areaGravandoAudio" class="area-gravando-audio">
+          <strong>Gravando áudio...</strong>
+          <span id="tempoGravandoAudio">00:00</span>
+          <button id="botaoCancelarGravacao" type="button" class="botao-perigo">Cancelar</button>
+          <button id="botaoPararGravacao" type="button" class="botao-principal">Parar</button>
+        </div>
+
+        <input id="campoImagem" type="file" accept="image/*" hidden />
+
+        <form id="formulario" class="formulario-envio">
+          <button id="botaoEmoji" class="botao-emoji" type="button" disabled>😊</button>
+          <button id="botaoAnexarImagem" class="botao-anexar" type="button" disabled>📎</button>
+
+          <textarea id="campoMensagem" class="campo-mensagem" placeholder="Digite uma mensagem..." disabled></textarea>
+
+          <button id="botaoAudio" class="botao-audio" type="button" disabled>🎙️</button>
+          <button id="botaoEnviar" class="botao-enviar" type="submit" disabled>➤</button>
+        </form>
+
+        <div id="painelEmojis" class="painel-emojis">
+          <button type="button">😀</button>
+          <button type="button">😂</button>
+          <button type="button">😍</button>
+          <button type="button">😎</button>
+          <button type="button">😭</button>
+          <button type="button">😡</button>
+          <button type="button">👍</button>
+          <button type="button">🙏</button>
+          <button type="button">🔥</button>
+          <button type="button">❤️</button>
+          <button type="button">🌴</button>
+          <button type="button">🥥</button>
+          <button type="button">🎮</button>
+          <button type="button">🁫</button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="modalPerfil" class="modal-perfil">
+    <div class="modal-perfil-conteudo">
+      <button id="botaoFecharPerfil" class="botao-fechar-perfil" type="button">×</button>
+
+      <div id="avatarPerfil" class="avatar-perfil">?</div>
+      <h2 id="nomePerfil" style="text-align:center;">Perfil</h2>
+      <p id="apelidoPerfil" style="text-align:center;"></p>
+      <p id="statusPerfil" style="text-align:center;"></p>
+      <p id="bioPerfil" style="text-align:center;"></p>
+      <p id="onlinePerfil" style="text-align:center;"></p>
+
+      <div style="display:grid; gap:8px; margin-top:14px;">
+        <input id="campoApelidoPerfil" class="campo-apelido-perfil" type="text" placeholder="Apelido deste contato..." />
+        <button id="botaoSalvarApelidoPerfil" class="botao-principal" type="button">Salvar apelido</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalEncaminhar" class="modal-encaminhar">
+    <div class="modal-encaminhar-conteudo">
+      <button id="botaoFecharEncaminhar" class="botao-fechar-encaminhar" type="button">×</button>
+
+      <h2>Encaminhar mensagem</h2>
+      <p id="encaminharOrigem"></p>
+      <p id="encaminharTexto"></p>
+
+      <img id="encaminharImagemPreview" style="max-width:220px; border-radius:14px; display:none;" alt="Imagem encaminhada" />
+      <audio id="encaminharAudioPreview" controls style="display:none;"></audio>
+
+      <h3>Contatos</h3>
+      <div id="listaEncaminharContatos" class="lista-pedidos"></div>
+
+      <h3 style="margin-top:14px;">Grupos</h3>
+      <div id="listaEncaminharGrupos" class="lista-pedidos"></div>
+    </div>
+  </div>
+
+  <div id="modalGrupoConfig" class="modal-grupo-config">
+    <div class="modal-grupo-config-conteudo">
+      <button id="botaoFecharGrupoConfig" class="botao-fechar-grupo-config" type="button">×</button>
+
+      <h2 id="tituloGrupoConfig">Grupo</h2>
+      <p id="subtituloGrupoConfig"></p>
+      <p id="avisoDonoGrupo" style="display:none;">Apenas o criador pode alterar este grupo.</p>
+
+      <div style="display:grid; gap:8px; margin:12px 0;">
+        <input id="campoNovoNomeGrupo" class="campo-novo-nome-grupo" type="text" placeholder="Novo nome do grupo..." />
+        <button id="botaoRenomearGrupo" type="button" class="botao-principal">Renomear grupo</button>
+      </div>
+
+      <h3>Membros</h3>
+      <div id="listaMembrosGrupoConfig" class="lista-pedidos"></div>
+
+      <h3 style="margin-top:14px;">Adicionar membro</h3>
+      <div id="listaAdicionarMembroGrupo" class="lista-pedidos"></div>
+
+      <button id="botaoApagarGrupo" type="button" class="botao-perigo" style="margin-top:14px;">Apagar grupo</button>
+    </div>
+  </div>
+
+  <div id="modalImagem" class="modal-imagem">
+    <button id="botaoFecharImagem" class="botao-fechar-imagem" type="button">×</button>
+    <div>
+      <img id="imagemModalGrande" alt="Imagem aberta" />
+      <p id="legendaImagemModal" style="color:white; text-align:center; margin-top:8px;"></p>
+    </div>
+  </div>
+
+  <div id="modalOcioso" class="modal-ocioso">
+    <div class="modal-ocioso-conteudo">
+      <button id="botaoFecharOcioso" class="botao-fechar-ocioso" type="button">×</button>
+
+      <div class="cabecalho-ocioso">
+        <div class="icone-ocioso">🁫</div>
+        <div>
+          <h2>Dominó Coqueiro</h2>
+          <p>Convide um contato aceito e jogue uma partida real de dominó.</p>
+        </div>
+      </div>
+
+      <div class="abas-ocioso">
+        <button id="abaOciosoConvites" class="aba-ocioso aba-ocioso-ativa" type="button">Convites</button>
+        <button id="abaOciosoContatos" class="aba-ocioso" type="button">Contatos</button>
+        <button id="abaOciosoPartidas" class="aba-ocioso" type="button">Partidas</button>
+      </div>
+
+      <section id="painelOciosoConvites" class="painel-ocioso painel-ocioso-ativo">
+        <div id="listaConvitesXadrez" class="lista-xadrez">Nenhum convite de dominó.</div>
+      </section>
+
+      <section id="painelOciosoContatos" class="painel-ocioso">
+        <div id="listaContatosXadrez" class="lista-xadrez">Nenhum contato disponível.</div>
+      </section>
+
+      <section id="painelOciosoPartidas" class="painel-ocioso">
+        <div class="area-jogo-xadrez">
+          <div class="topo-jogo-xadrez">
+            <div>
+              <h3 id="tituloPartidaXadrez">Partida de dominó</h3>
+              <span id="statusPartidaXadrez">Escolha uma partida para jogar.</span>
+            </div>
+
+            <div class="acoes-xadrez">
+              <button id="botaoReiniciarXadrez" type="button" class="botao-secundario" disabled>🔀 Embaralhar</button>
+              <button id="botaoSairXadrez" type="button" class="botao-perigo" disabled>Sair</button>
+            </div>
+          </div>
+
+          <div class="info-jogadores-xadrez">
+            <div id="jogadorBrancoXadrez" class="jogador-xadrez">-</div>
+            <div id="vezXadrez" class="vez-xadrez">Aguardando partida</div>
+            <div id="jogadorPretoXadrez" class="jogador-xadrez">-</div>
+          </div>
+
+          <div id="mensagemXadrez" class="mensagem-xadrez"></div>
+
+          <div id="tabuleiroXadrez" class="tabuleiro-xadrez">
+            <div class="tabuleiro-xadrez-vazio">
+              Abra uma partida para carregar a mesa de dominó.
+            </div>
+          </div>
+
+          <div class="historico-xadrez-container">
+            <h3>Histórico</h3>
+            <div id="historicoXadrez" class="historico-xadrez">Nenhuma jogada ainda.</div>
+          </div>
+        </div>
+
+        <div id="listaPartidasXadrez" class="lista-xadrez" style="display:none;"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
